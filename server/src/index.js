@@ -33,9 +33,6 @@ app.engine('hbs', handlebars({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-// Serve static files from the 'resources' directory
-app.use(express.static(path.join(__dirname, 'resources')));
-
 route(app);
 
 app.listen(port, () => {
