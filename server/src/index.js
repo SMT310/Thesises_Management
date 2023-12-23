@@ -1,17 +1,26 @@
+require('dotenv').config();
+
 const express = require('express');
-const methodOverride = require('method-override');
 const cors = require('cors');
+const passport = require('passport');
 const handlebars = require('express-handlebars');
 const route = require('./routes');
 
 const db = require('./config/db');
 const path = require('path');
 const app = express();
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8888;
 
 db.connect();
 
-app.use(cors());
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+}));
 app.use(express.json());
 
 //template engine
@@ -23,6 +32,9 @@ app.engine('hbs', handlebars({
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
+
+// Serve static files from the 'resources' directory
+app.use(express.static(path.join(__dirname, 'resources')));
 
 route(app);
 
