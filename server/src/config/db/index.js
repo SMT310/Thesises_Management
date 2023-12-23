@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
+let uri = 'mongodb+srv://NodeJS:123@cluster0.ghscqmo.mongodb.net/bookstore?retryWrites=true&w=majority'
+
 async function connect() {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/f8_education_dev');
+        await mongoose.connect(uri);
         console.log("connect successfully");
     } catch (error) {
         console.log('connect failure');
