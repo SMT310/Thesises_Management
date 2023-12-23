@@ -3,9 +3,9 @@ const path = require('path');
 
 class HomeController {
     home(req, res, next) {
-        // res.send('Home Page is here');
-        const filePath = path.join(__dirname, '../resources/views/home.html');
-        res.sendFile(filePath);
+        res.send('Home Page is here');
+        // const filePath = path.join(__dirname, '../resources/views/home.html');
+        // res.sendFile(filePath);
     }
 }
 
