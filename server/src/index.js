@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const passport = require('passport');
 const handlebars = require('express-handlebars');
 const route = require('./routes');
 
@@ -12,9 +11,6 @@ const app = express();
 const port = process.env.PORT || 8888;
 
 db.connect();
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(cors({
     origin: process.env.CLIENT_URL,

@@ -49,7 +49,7 @@ function Sidebar() {
 
   const account = useSelector((state) => state.account);
 
-  const role = account.type;
+  const role = account.role;
   useEffect(() => {
     if (role === "student")
       setSettings([

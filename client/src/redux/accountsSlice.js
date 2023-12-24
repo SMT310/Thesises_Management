@@ -4,12 +4,9 @@ const INITIAL_ACCOUNT = localStorage.getItem("account")
   ? JSON.parse(localStorage.getItem("account"))
   : {
       _id: null,
-      firstName: null,
-      lastName: null,
+      fullName: null,
       email: null,
-      phone: null,
-      address: null,
-      type: null,
+      role: null,
       isActived: false,
       accessToken: null,
       refreshTokens: [""],
@@ -21,12 +18,9 @@ const INITIAL_ACCOUNT = localStorage.getItem("account")
     };
 const EMPTY_ACCOUNT = {
   _id: null,
-  firstName: null,
-  lastName: null,
+  fullName: null,
   email: null,
-  phone: null,
-  address: null,
-  type: null,
+  role: null,
   isActived: false,
   accessToken: null,
   refreshTokens: [""],
@@ -44,12 +38,9 @@ const accountsSlices = createSlice({
     setAccount: (state, action) => {
       const {
         _id,
-        firstName,
-        lastName,
+        fullName,
         email,
-        phone,
-        address,
-        type,
+        role,
         isActived,
         accessToken,
         refreshTokens,
@@ -61,12 +52,9 @@ const accountsSlices = createSlice({
       } = action?.payload;
       console.log(action?.payload);
       state._id = _id;
-      state.firstName = firstName;
-      state.lastName = lastName;
+      state.fullName = fullName;
       state.email = email;
-      state.phone = phone;
-      state.address = address;
-      state.type = type;
+      state.role = role;
       state.isActived = isActived;
       state.accessToken = accessToken;
       state.refreshTokens = [...refreshTokens];

@@ -25,8 +25,11 @@ export const publicRoutes = [
 export const privateRoutes = [
     { path: "/dashboard", component: Dashboard, layout: AdminLayout },
     { path: "/manage-student", component: Student, layout: AdminLayout },
-
-
+    // { path: "/manage-faculty", component: Faculty, layout: AdminLayout },
+    // { path: "/manage-schedule", component: Schedule, layout: AdminLayout },
+    // { path: "/manage-thesis", component: Thesis, layout: AdminLayout },
+    // { path: "/manage-term", component: Term, layout: AdminLayout },
+    // { path: "/manage-major", component: Major, layout: AdminLayout },
 ];
 
 // You can also define layouts if necessary
